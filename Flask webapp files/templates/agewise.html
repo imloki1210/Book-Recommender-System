@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Recommender System</title>
+    <style>
+      *{
+        margin: 0px;
+        padding: 0px;
+      }
+      li{
+      list-style:none;
+      }
+      .bo{
+        /* background: url(https://colibriwp.com/blog/wp-content/uploads/2019/08/kseniya-lapteva-LdPFsNeCPGk-unsplash.jpg); */
+        background-color: rgb(255, 255, 255);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+
+        /* filter: grayscale(100%); */
+
+      }
+      .navbar {
+        display: flex;
+        list-style: none;
+        background-color: rgb(0, 0, 0);
+        height: 85px;
+        font-family: Arial, Helvetica, sans-serif;
+
+      }
+      .navbar li:hover{
+        cursor: pointer;
+
+      }
+      .navbar h2 {
+        font-size: 35px;
+        margin: 20px 30px;
+        color: white;
+      }
+      nav ul li{
+        float: right;
+        color: white;
+        font-size: 20px;
+        margin: 30px 40px;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+        text-transform: uppercase;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        padding: 5px 10px;
+        border-radius: 5px;
+      }
+      nav ul li a:hover {
+        background-color: rgb(57, 57, 57);
+        transition: .3s
+      }
+      a.active,a:hover{
+        background-color: rgb(57, 57, 57);
+        transition: .3s
+      }
+
+      .text {
+        color: rgb(0, 0, 0);
+        display: flex;
+        justify-content: center;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        margin-top: 30px;
+        font-size: 40px;
+        width: 100%;
+      }
+      .booksdiv {
+        display: grid;
+
+      }
+      .booksdiv ul{
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        /* gap:; */
+        color: rgb(0, 0, 0);
+
+      }
+      .agewtit{
+      color: white;
+      margin: 20px 0px;
+      padding: 20px 30%;
+      background-color: black;
+      font-family: "Arial", Arial, sans-serif;
+      font-size: 30px;
+            }
+      .img {
+        margin: 50px 140px;
+      }
+      .img img{
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+      }
+      .img img:hover{
+        transform: scale(1.03);
+        box-shadow: 0px 5px 15px rgba(0,0,0,0.5);
+      }
+      .tit{
+        margin: 10px 0px;
+      }
+      .tit h3{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+      }
+      .bkn{
+              text-decoration: underline;
+      }
+      .tit p{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+      }
+      .aut{
+        margin-top: 10px;
+      }
+      .about{
+        display: block;
+        color: white;
+        border: 2px solid black;
+        background-color: black;
+        /* width: 100%; */
+        /* height: 150px; */
+        padding: 40px;
+      }
+      .about h2{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 34px;
+      }
+      .about p{
+        color: rgb(255, 255, 255);
+        margin: 10px 0px;
+        font-size: 16px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bo">
+    <nav>
+      <ul class="navbar">
+        <h2>BookJav</h2>
+        <li><a href="/" >TOP RATED</a></li>
+        <li><a href="/searchbooks">For You</a></li>
+        <li><a href="/agewise" class="active">Age Wise</a></li>
+        <li><a href="#section1">About</a></li>
+        <li><a href="/contactus">Contact</a></li>
+
+      </ul>
+    </nav>
+    <div class="container">
+      <div class="text">
+        <h1>AGE GROUP WISE RECOMMENDER</h1>
+      </div>
+      </div>
+
+    <div class="booksdiv">
+      {% for group, books in age_recommendations.items() %}
+<h2 class="agewtit">Recommendations for {{ group }} age group:</h2>
+<ul>
+
+    {% for book in books %}
+    <div class="books">
+         <div class="img">
+    <img src="{{ book['Image-URL-L'] }}"height="300px" width="206.25px"/>
+             <div class="tit">
+                 <li><h3 class="bkn">{{ book['Book-Title'] }}</h3> </li>
+                  <div class="aut">
+    <li>{{ book['Book-Author'] }}</li>
+                  </div>
+             </div>
+         </div>
+    </div>
+    {% endfor %}
+</ul>
+{% endfor %}
+    </div>
+         </div>
+       <dvi class="about" id="section1">
+      <h2>About us:</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi perferendis numquam minus quisquam accusamus sunt, consequatur dolorem, earum velit animi veritatis quae dolor, ipsa ex sed. Culpa amet facilis dolore Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum illo laudantium provident itaque vitae, veniam temporibus id! Illo maxime delectus placeat officiis provident vero! Dignissimos nisi amet cum libero maxime consequatur temporibus architecto voluptate velit dolor labore eveniet quasi eligendi id numquam quia earum quidem, quod culpa! Enim natus mollitia nisi. Laborum sint, recusandae vitae delectus dolorum commodi aspernatur nam ratione illum inventore magnam ea pariatur atque. Eos at aspernatur voluptatum! Reprehenderit, doloremque iusto? Recusandae et saepe qui consectetur, tempore facilis? Fugiat quo itaque pariatur ipsa tempore, veritatis deleniti, eius dolorem nostrum omnis earum perspiciatis! Quisquam, quae saepe dolorum maiores et vitae sit praesentium delectus odio sunt neque laboriosam necessitatibus sint officiis molestiae animi nesciunt, nostrum sequi vero molestias. Cupiditate voluptatibus, est temporibus iste atque eius modi corporis voluptates. Suscipit, corporis delectus animi omnis, fugiat quidem debitis totam ipsum non rerum officia. Sint voluptates unde quis distinctio a ea aliquam? lorem150</p>
+    </dvi>
+  </body>
+</html>
