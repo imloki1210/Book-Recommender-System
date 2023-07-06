@@ -1,0 +1,32 @@
+.box{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.box2{
+    width: 230px;
+    padding: 10px 60px;
+    height: 200px;
+    /* border: 3px solid black; */
+    font-size: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 10px;
+    background-color: rgb(29, 145, 127);
+    color: white;
+}
+.box2 button{
+    cursor: pointer;
+    margin-left: 45px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: white;
+    color: rgb(29, 145, 127);
+}
+.box2 button:hover{
+    background-color: rgba(255, 255, 255, 0.9);
+}

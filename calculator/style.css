@@ -1,0 +1,41 @@
+.btn{
+    padding: 20px 25px;
+    margin: 0px;
+    border: 0px;
+    color: white;
+    background-color: rgb(16, 0, 39);
+    font-family: Helvetica, sans-serif;
+    font-size: 18px;
+    cursor: pointer;
+}
+.btn:hover{
+    /* transition: ease-in-out .3s; */
+    background-color: rgb(39, 0, 93);
+    border-radius: 100px;
+}
+.co{
+    color: rgb(255, 85, 0);
+}
+.ip{
+    margin: 5px;
+    border: 0px;
+    background-color: rgb(16, 0, 39);
+    border-bottom: 1px solid rgb(54, 43, 69);
+    width: 200px;
+    height: 50px;
+    color: white;
+    font-size: 16px;
+    padding: 0;
+    text-align: right;
+}
+.ip:focus{
+    outline: none;
+    border-bottom: 1px solid rgb(66, 66, 66);
+
+}
+.container{
+    width: 280px;
+    height: 420px;
+    border-radius: 10px;
+    padding-top: 50px;
+}
